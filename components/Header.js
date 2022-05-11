@@ -11,6 +11,9 @@ export default function Header() {
     const [endDate, setEndDate] = useState(new Date());
     const [noOfGuests, setNoOfGuests] = useState(1);
 
+    const resetInput = () => {
+        setSearchInput('');
+    }
 
     const handleSelect = (ranges) => {
         setStartDate(ranges.selection.startDate);
@@ -70,7 +73,10 @@ export default function Header() {
                             className="w-12 pl-2 text-lg outline-none text-red-400 " 
                         />
                     </div>
-
+                    <div className="flex">
+                        <button onClick={resetInput} className="flex-grow text-gray-500">Cancel</button>
+                        <button className="flex-grow text-red-400">Search</button>
+                    </div>
                 </div>
             )}
         </header>
